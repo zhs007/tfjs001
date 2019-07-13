@@ -36,7 +36,9 @@ async function run() {
   );
 
   // More code will be added below
-  let model = createModel();
+  // Create the model
+  const model = createModel();
+  tfvis.show.modelSummary({ name: 'Model Summary' }, model);
 
   // Convert the data to a form we can use for training.
   const tensorData = convertToTensor(data);
