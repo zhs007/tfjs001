@@ -36,6 +36,8 @@ async function run() {
   );
 
   // More code will be added below
+  let model = createModel();
+
   // Convert the data to a form we can use for training.
   const tensorData = convertToTensor(data);
   const { inputs, labels } = tensorData;
