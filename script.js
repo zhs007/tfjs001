@@ -65,12 +65,14 @@ function createModel() {
     tf.layers.dense({
       inputShape: [1],
       units: 50,
-      // useBias: true,
+      useBias: true,
       activation: 'sigmoid'
     })
   );
   // model.add(tf.layers.dense({ inputShape: [1], units: 50, activation: 'sigmoid' }));
-  model.add(tf.layers.dense({ units: 30, activation: 'sigmoid' }));
+  model.add(
+    tf.layers.dense({ units: 30, useBias: true, activation: 'sigmoid' })
+  );
 
   // Add an output layer
   model.add(tf.layers.dense({ units: 1 }));
