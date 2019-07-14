@@ -14,6 +14,15 @@ async function getData() {
     }))
     .filter(car => car.mpg != null && car.horsepower != null);
 
+  let cleaned = [];
+  for (let i = 0; i < 10240; ++i) {
+    let x = Math.random();
+    cleaned.push({
+      mpg: Math.sin(x) + Math.random() * 0.1 - 0.05,
+      horsepower: x
+    });
+  }
+
   return cleaned;
 }
 
@@ -70,9 +79,7 @@ function createModel() {
     })
   );
   // model.add(tf.layers.dense({ inputShape: [1], units: 50, activation: 'sigmoid' }));
-  model.add(
-    tf.layers.dense({ units: 50, activation: 'sigmoid' })
-  );
+  model.add(tf.layers.dense({ units: 50, activation: 'sigmoid' }));
 
   // Add an output layer
   model.add(tf.layers.dense({ units: 1, useBias: true }));
