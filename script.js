@@ -16,7 +16,7 @@ async function getData() {
 
   let cleaned = [];
   for (let i = 0; i < 1024; ++i) {
-    let x = Math.random();
+    let x = Math.random() * 10;
     cleaned.push({
       mpg: Math.sin(x) + Math.random() * 0.1 - 0.05,
       horsepower: x
