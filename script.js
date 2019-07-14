@@ -15,7 +15,7 @@ async function getData() {
   //   .filter(car => car.mpg != null && car.horsepower != null);
 
   let cleaned = [];
-  for (let i = 0; i < 10240; ++i) {
+  for (let i = 0; i < 1024; ++i) {
     let x = Math.random();
     cleaned.push({
       mpg: Math.sin(x) + Math.random() * 0.1 - 0.05,
@@ -146,7 +146,7 @@ async function trainModel(model, inputs, labels) {
   });
 
   const batchSize = 32;
-  const epochs = 500;
+  const epochs = 100;
 
   return await model.fit(inputs, labels, {
     batchSize,
