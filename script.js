@@ -18,7 +18,7 @@ async function getData() {
   for (let i = 0; i < 1024; ++i) {
     let x = Math.random() * 10;
     cleaned.push({
-      mpg: Math.sin(x) + 3 * Math.random() * 0.1 - 0.05,
+      mpg: Math.sin(x) + 5 * Math.random() * 0.1 - 0.05,
       horsepower: x
     });
   }
@@ -146,7 +146,7 @@ async function trainModel(model, inputs, labels) {
   });
 
   const batchSize = 32;
-  const epochs = 200;
+  const epochs = 300;
 
   return await model.fit(inputs, labels, {
     batchSize,
