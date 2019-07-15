@@ -73,7 +73,7 @@ function createModel() {
   model.add(
     tf.layers.dense({
       inputShape: [1],
-      units: 100,
+      units: 50,
       useBias: true
       // activation: 'sigmoid'
     })
